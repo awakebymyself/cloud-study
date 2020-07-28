@@ -1,0 +1,28 @@
+package rules
+import com.lzg.drool.Order
+
+//规则名
+rule "Hello World"
+    //条件语句
+    when
+        //当该实体的status属性为HELLO的时候，将该实体赋值给m，实体的message属性赋值给printMsg
+        $order : Order( originPrice < 100 )
+    //满足条件之后要做的事情
+    then
+        //系统输出和重新设置实体属性
+        System.out.println( "触发条件1" );
+        $order.setActualPrice($order.getOriginPrice() - 10);
+end
+
+//第二个规则
+rule "2"
+    //条件语句
+    when
+        //当该实体的status属性为HELLO的时候，将该实体赋值给m，实体的message属性赋值给printMsg
+        $order : Order( originPrice > 100 &&  originPrice < 200)
+    //满足条件之后要做的事情
+    then
+        //系统输出和重新设置实体属性
+        System.out.println( "触发条件2" );
+        $order.setActualPrice($order.getOriginPrice() - 30);
+end
