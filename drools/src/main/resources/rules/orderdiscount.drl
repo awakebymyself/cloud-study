@@ -14,6 +14,7 @@ rule "Hello World"
         $order.setActualPrice($order.getOriginPrice() - 10);
 end
 
+
 //第二个规则
 rule "2"
     //条件语句

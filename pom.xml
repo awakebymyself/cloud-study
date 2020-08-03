@@ -11,7 +11,9 @@
         <module>gateway</module>
         <module>drools</module>
         <module>cloud-kafka</module>
-    </modules>
+        <module>xxl-job</module>
+		<module>apollo</module>
+	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
